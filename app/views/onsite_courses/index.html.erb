@@ -1,0 +1,29 @@
+<h1>Listing onsite_courses</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price in pennies</th>
+    <th>Down payment price in pennies</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @onsite_courses.each do |onsite_course| %>
+  <tr>
+    <td><%= onsite_course.title %></td>
+    <td><%= onsite_course.description %></td>
+    <td><%= onsite_course.price_in_pennies %></td>
+    <td><%= onsite_course.down_payment_price_in_pennies %></td>
+    <td><%= link_to 'Show', onsite_course %></td>
+    <td><%= link_to 'Edit', edit_onsite_course_path(onsite_course) %></td>
+    <td><%= link_to 'Destroy', onsite_course, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Onsite course', new_onsite_course_path %>

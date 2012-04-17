@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @onsite_course.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @onsite_course.description %>
+</p>
+
+<p>
+  <b>Price in pennies:</b>
+  <%= @onsite_course.price_in_pennies %>
+</p>
+
+<p>
+  <b>Down payment price in pennies:</b>
+  <%= @onsite_course.down_payment_price_in_pennies %>
+</p>
+
+
+<%= link_to 'Edit', edit_onsite_course_path(@onsite_course) %> |
+<%= link_to 'Back', onsite_courses_path %>
