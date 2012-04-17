@@ -1,0 +1,31 @@
+<h1>Listing online_courses</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price in pennies</th>
+    <th>Position</th>
+    <th>Market sector</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @online_courses.each do |online_course| %>
+  <tr>
+    <td><%= online_course.title %></td>
+    <td><%= online_course.description %></td>
+    <td><%= online_course.price_in_pennies %></td>
+    <td><%= online_course.position %></td>
+    <td><%= online_course.market_sector_id %></td>
+    <td><%= link_to 'Show', online_course %></td>
+    <td><%= link_to 'Edit', edit_online_course_path(online_course) %></td>
+    <td><%= link_to 'Destroy', online_course, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Online course', new_online_course_path %>

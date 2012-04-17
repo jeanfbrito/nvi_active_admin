@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @online_course.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @online_course.description %>
+</p>
+
+<p>
+  <b>Price in pennies:</b>
+  <%= @online_course.price_in_pennies %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @online_course.position %>
+</p>
+
+<p>
+  <b>Market sector:</b>
+  <%= @online_course.market_sector_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_online_course_path(@online_course) %> |
+<%= link_to 'Back', online_courses_path %>
