@@ -1,20 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @market_sector.name %>
-</p>
-
-<p>
-  <b>Blurb:</b>
-  <%= @market_sector.blurb %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= @market_sector.body %>
-</p>
-
-
-<%= link_to 'Edit', edit_market_sector_path(@market_sector) %> |
-<%= link_to 'Back', market_sectors_path %>
+<article>
+  <header>
+    <h2><%= @market_sector.name %></h2>
+  </header>
+  <%= markdown(@market_sector.body) %>
+</article>

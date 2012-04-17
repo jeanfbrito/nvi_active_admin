@@ -33,6 +33,8 @@ gem 'tabs_on_rails'
 gem 'stripe'
 gem 'high_voltage'
 gem 'meta_search', '>= 1.1.0.pre'
+gem 'friendly_id'
+gem 'redcarpet'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
