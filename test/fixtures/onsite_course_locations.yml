@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  onsite_course_id: 1
+  location_id: 1
+  instructor_id: 1
+
+two:
+  onsite_course_id: 1
+  location_id: 1
+  instructor_id: 1
