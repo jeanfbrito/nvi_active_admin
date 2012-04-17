@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @instructor.name %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @instructor.bio %>
+</p>
+
+<p>
+  <b>Profile picture uid:</b>
+  <%= @instructor.profile_picture_uid %>
+</p>
+
+<p>
+  <b>Profile picture name:</b>
+  <%= @instructor.profile_picture_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_instructor_path(@instructor) %> |
+<%= link_to 'Back', instructors_path %>

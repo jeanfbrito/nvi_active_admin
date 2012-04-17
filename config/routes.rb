@@ -1,4 +1,6 @@
 NvpAa::Application.routes.draw do
+  resources :instructors
+
   resources :onsite_courses
 
   resources :online_courses
