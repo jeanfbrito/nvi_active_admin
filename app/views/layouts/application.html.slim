@@ -1,0 +1,95 @@
+doctype 5
+html xmlns="http://www.w3.org/1999/xhtml"
+  head
+    meta name="title" content="New Venture Prep| Accelerated Instructor-led and online courses in financial training in financial modeling, private equity, accounting and statement analysis with a customized curriculum"
+    meta name="keywords" content="financial training, investment banking, financial valuation, modeling, accounting, statement analysis, financial engineering, investment banking academy, private equity, new venture prep"
+    meta content="text/html; charset=utf-8" http-equiv="Content-Type"
+    title New Venture Prep
+    /! Stylesheet
+    == stylesheet_link_tag 'application'
+    /! Javascript
+    == javascript_include_tag 'application'
+  body
+    #bg
+      /! Wapper Sec
+      #wrapper_sec
+        /! masterhead
+        == render('shared/masthead')
+        /! Content Seciton
+        #content_section
+          /! News Updates
+          .news_updates
+            span.news_update News Updates
+            span.news_date
+              em 02-03-2012 5:30 PM:
+            span.news_des
+              a.colr href="#" Courses are set to be released late March for online streaming to alpha users
+            a.next href="#"
+              == image_tag "newsarrow.jpg"
+          .clear
+          /! Col1
+          .col1.span6
+            /! Banner
+            #banner
+              #slider2
+                .contentdiv
+                  a href="#"
+                    == image_tag "banner.jpg"
+                  .banner_des
+                    h4 Want to start your own venture?
+                    p Develop entrepreneurship best practice to launch or grow a your own venture
+                .contentdiv
+                  a href="#"
+                    == image_tag "banner2.jpg"
+                  .banner_des
+                    h4 Who are we?
+                    p New Venture Prep is a global entrepreneurship training organization that exclusively provides education for global best practices for entrepreneurship.
+                .contentdiv
+                  a href="#"
+                    == image_tag "banner3.jpg"
+                  .banner_des
+                    h4 Applying to your financial dream job?
+                    p New Venture Prep is a global entrepreneurship training organization that exclusively provides education for global best practices for entrepreneurship.
+                .contentdiv
+                  a href="#"
+                    == image_tag "banner4.jpg"
+                  .banner_des
+                    h4 Why we do it
+                    p New Venture Prep was founded by entrepreneurs to prepare and of students and professionals that are determined to start new or grow existing ventures.
+                .contentdiv
+                  a href="#"
+                    == image_tag "banner5.jpg"
+                  .banner_des
+                    h4 What do we do?
+                    p We provide independent study programs in addition to online and on-site training to independent learners, employers, employees, and students.
+                    
+              #paginate-slider2.pagination
+            == raw @page.content_for(:body)
+          /! Col2
+          .col2.span2
+            .ads
+              a href="#"
+                == image_tag "ads.gif"
+            .clear
+            - if current_user
+              == render "sidebar/profile"
+            - else
+              == render "sidebar/login"
+            == raw @page.content_for(:sidebar)
+          .clear
+          // Pre-footer
+          == raw @page.content_for(:pre_footer)
+    /! Footer Section
+    == render('shared/footer')
+  javascript:
+    var _gauges = _gauges || [];
+    (function() {
+      var t   = document.createElement('script');
+      t.type  = 'text/javascript';
+      t.async = true;
+      t.id    = 'gauges-tracker';
+      t.setAttribute('data-site-id', '4f75c7e4613f5d07c9000017');
+      t.src = '//secure.gaug.es/track.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(t, s);
+    })();

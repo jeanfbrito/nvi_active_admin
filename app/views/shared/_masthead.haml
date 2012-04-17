@@ -1,0 +1,36 @@
+#masterhead
+  / Logo
+  .logo
+    = link_to root_path do
+      = image_tag 'logo.png'
+  / masterhead Right Section
+  .topright_sec
+    / top navigation
+    .topnavigation
+      %ul
+        %li.first
+        %li
+          %a{:href => "news"} News
+        %li
+          %a{:href => "#"} Events
+        %li
+          %a{:href => "#"} Jobs
+        %li
+          %a{:href => "#"} Student Profile
+        %li
+          %a{:href => "#"} Our Campus
+        %li
+          %a.nobg{:href => "#"}
+            = image_tag 'rss.gif'
+        %li.last
+    .clear
+    / top search
+    .top_search
+      .advance_search
+        %a{:href => "#"} Advanced Search
+        %form.form-search.form-inline
+          %input.search-query.input-medium{:name => "txt", :placeholder => "Search", :type => "text"}/
+          %input.btn.btn-small{:href => "#", :type => "submit", :value => "Search"}/
+    .clear
+  / Navigation
+  = render 'shared/navigation'
