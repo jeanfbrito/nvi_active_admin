@@ -3,5 +3,7 @@ class Location < ActiveRecord::Base
   has_many :onsite_course_locations
   has_many :onsite_courses, through: :onsite_course_locations
   has_many :instructors, through: :onsite_course_locations
+  has_many :onsite_lesson_locations
+  has_many :onsite_lessons, through: :onsite_lesson_locations
   
 end

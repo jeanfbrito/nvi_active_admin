@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  onsite_lesson_id: 1
+  location_id: 1
+  seats_remaining: 1
+  start_time: 2012-04-17 12:18:07
+
+two:
+  onsite_lesson_id: 1
+  location_id: 1
+  seats_remaining: 1
+  start_time: 2012-04-17 12:18:07
