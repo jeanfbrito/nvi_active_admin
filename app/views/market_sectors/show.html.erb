@@ -1,6 +1,7 @@
 <article>
   <header>
     <h2><%= @market_sector.name %></h2>
+    <p class="text"><%= @market_sector.subheading %></p>
   </header>
   <%= markdown(@market_sector.body) %>
 </article>
