@@ -1,0 +1,33 @@
+<%= form_for(@onsite_lesson) do |f| %>
+  <% if @onsite_lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@onsite_lesson.errors.count, "error") %> prohibited this onsite_lesson from being saved:</h2>
+
+      <ul>
+      <% @onsite_lesson.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price_in_pennies %><br />
+    <%= f.number_field :price_in_pennies %>
+  </div>
+  <div class="field">
+    <%= f.label :down_payment_price_in_pennies %><br />
+    <%= f.number_field :down_payment_price_in_pennies %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

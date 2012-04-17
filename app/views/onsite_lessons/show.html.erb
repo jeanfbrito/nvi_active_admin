@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @onsite_lesson.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @onsite_lesson.description %>
+</p>
+
+<p>
+  <b>Price in pennies:</b>
+  <%= @onsite_lesson.price_in_pennies %>
+</p>
+
+<p>
+  <b>Down payment price in pennies:</b>
+  <%= @onsite_lesson.down_payment_price_in_pennies %>
+</p>
+
+
+<%= link_to 'Edit', edit_onsite_lesson_path(@onsite_lesson) %> |
+<%= link_to 'Back', onsite_lessons_path %>
