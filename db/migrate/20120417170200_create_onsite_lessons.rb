@@ -4,7 +4,7 @@ class CreateOnsiteLessons < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :price_in_pennies
-      t.integer :down_payment_price_in_pennies
+      t.integer :down_payment_price_in_pennies, default: 200000
       t.integer :onsite_course_id
 
       t.timestamps
