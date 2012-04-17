@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @online_lesson.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @online_lesson.description %>
+</p>
+
+<p>
+  <b>Price in pennies:</b>
+  <%= @online_lesson.price_in_pennies %>
+</p>
+
+<p>
+  <b>Video uid:</b>
+  <%= @online_lesson.video_uid %>
+</p>
+
+<p>
+  <b>Online course:</b>
+  <%= @online_lesson.online_course_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_online_lesson_path(@online_lesson) %> |
+<%= link_to 'Back', online_lessons_path %>

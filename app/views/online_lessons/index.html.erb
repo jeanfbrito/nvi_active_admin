@@ -1,0 +1,31 @@
+<h1>Listing online_lessons</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price in pennies</th>
+    <th>Video uid</th>
+    <th>Online course</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @online_lessons.each do |online_lesson| %>
+  <tr>
+    <td><%= online_lesson.title %></td>
+    <td><%= online_lesson.description %></td>
+    <td><%= online_lesson.price_in_pennies %></td>
+    <td><%= online_lesson.video_uid %></td>
+    <td><%= online_lesson.online_course_id %></td>
+    <td><%= link_to 'Show', online_lesson %></td>
+    <td><%= link_to 'Edit', edit_online_lesson_path(online_lesson) %></td>
+    <td><%= link_to 'Destroy', online_lesson, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Online lesson', new_online_lesson_path %>
