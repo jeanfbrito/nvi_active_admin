@@ -9,7 +9,6 @@ class CreateOnsiteLessons < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    create_index :onsite_lessons, :onsite_course_id
+    add_index :onsite_lessons, :onsite_course_id
   end
 end
