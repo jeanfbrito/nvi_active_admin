@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418144442) do
+ActiveRecord::Schema.define(:version => 20120418174654) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(:version => 20120418144442) do
     t.datetime "updated_at",           :null => false
   end
 
+  create_table "jobs", :force => true do |t|
+    t.string   "position"
+    t.text     "description"
+    t.boolean  "active"
+    t.string   "contact_email"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "line_items", :force => true do |t|
     t.integer  "purchasable_id"
     t.string   "purchasable_type"
@@ -98,6 +107,15 @@ ActiveRecord::Schema.define(:version => 20120418144442) do
   end
 
   add_index "market_sectors", ["slug"], :name => "index_market_sectors_on_slug"
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.string   "blurb"
+    t.text     "body"
+    t.boolean  "published"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "online_courses", :force => true do |t|
     t.string   "title"
