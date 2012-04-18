@@ -18,12 +18,12 @@ class UsersController < ApplicationController
       :description => "(#{@user.id}) #{@user.name}",
       :card => params[:stripe_card_token]
     )
-    @user.stripe_customer_id = stripe_customer["id"]
+    @user.stripe_customer_token = stripe_customer.id
     @user.save
     if params[:return_to]
       redirect_to params[:return_to]
     else
-      redirect_to :back
+      redirect_to :users
     end
   end
 

@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
                   :stripe_card_token
   attr_accessor :stripe_card_token
 
-  validates_length_of :password, minimum: 6
-  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
-  validates_uniqueness_of :email
+  # validates_length_of :password, minimum: 6
+  # validates_confirmation_of :password, :message => "should match confirmation", :if => :password
   has_many :carts
   has_many :line_items, through: :carts
   has_many :online_courses, through: :line_items
@@ -26,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def credit_card_number
-    stripe_customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+    stripe_customer = Stripe::Customer.retrieve(self.stripe_customer_token)
     "XXXX-XXXX-XXXX-#{stripe_customer["active_card"]["last4"]}"
   end
 

@@ -1,0 +1,8 @@
+<h1>Finalizing Payment</h1>
+<h3 class="process_payment_msg">Process payment with card <%= @user.credit_card_number %>?</h3>
+
+<div class="btn-group">
+  <%= link_to "No, go back to cart", cart_path, class: 'btn' %>
+  <%= link_to "No, I need to change payment options", user_edit_payment_path(return_to: cart_finalize_path), class: 'btn' %>
+  <%= link_to "Yes, finalize payment", cart_charge_path, class: 'btn' %>
+</div>

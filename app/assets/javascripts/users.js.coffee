@@ -3,13 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  # Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
   Stripe.setPublishableKey("pk_9JXNDFc04jTTvSL8IVw4XqP9nXrh3")
   customer.setupForm()
 
 customer =
   setupForm: ->
-    $('#update_payment').submit ->
+    $('form#update_payment').submit ->
       $('input[type=submit]').attr('disabled', true)
       if $('#card_number').length
         customer.processCard()
