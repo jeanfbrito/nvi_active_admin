@@ -4,6 +4,10 @@ module ApplicationHelper
     button_to "Add to cart", add_to_cart_path(line_item: {purchasable_id: purchasable.id, purchasable_type: purchasable.class}), class: 'btn btn-primary btn-mini'
   end
 
+  def add_reservation_to_cart(purchasable, location)
+    button_to "Reserve Spot", add_to_cart_path(line_item: {purchasable_id: purchasable.id, purchasable_type: purchasable.class, reservation: true, location_id: location.id}), class: 'btn btn-success btn-mini'
+  end
+
   def remove_from_cart(line_item)
     button_to "Remove", remove_from_cart_path(id: line_item.id), class: 'btn btn-danger'
   end

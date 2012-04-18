@@ -22,6 +22,14 @@ class OnsiteLesson < ActiveRecord::Base
     self.price_in_pennies = new_price * 100
   end
 
+  def seats_remaining_at(location)
+    self.onsite_lesson_locations.where(location_id: location.id).first.seats_remaining
+  end
+
+  def at(location)
+    self.onsite_lesson_locations.where(location_id: location.id).first
+  end
+
   def import_locations
     if self.onsite_course
       self.locations << self.onsite_course.locations

@@ -1,0 +1,28 @@
+<div class="onsite-lesson <%= cycle 'odd', 'even', name: "onsite_course_#{onsite_lesson.onsite_course_id}" %>">
+  <div class="lesson-header">
+    <div class="left">
+      <div class="left">
+        <a data-toggle="collapse" href="#lesson_<%= onsite_lesson.id %>"><p><%= onsite_lesson.title %></p></a>
+      </div>
+      <div class="clear"></div>
+      <div class="left">
+        <p style="float: left; margin-right: 10px;" class="seats_remaining"><small>Seats Remaining: <%= onsite_lesson.at(location).seats_remaining %></small></p>
+      </div>
+    </div>
+    <div class="right">
+      <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_lesson.price) %></small></p>
+      <%= add_to_cart(onsite_lesson) %>
+    </div>
+    <div class="right">
+      <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_lesson.down_payment_price) %></small></p>
+      <%= add_reservation_to_cart(onsite_lesson, location) %>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="lesson-body collapse" id="lesson_<%= onsite_lesson.id %>">
+    <div class="lesson-inner">
+      <%= markdown(onsite_lesson.description) %>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

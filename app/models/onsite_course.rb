@@ -7,5 +7,30 @@ class OnsiteCourse < ActiveRecord::Base
   has_many :line_items, as: :purchasable
   belongs_to :market_sector
   acts_as_list
+  alias_method :lessons, :onsite_lessons
+
+  def down_payment_price
+    self.down_payment_price_in_pennies / 100.0
+  end
+
+  def down_payment_price=(new_down_payment_price)
+    self.down_payment_price_in_pennies = new_down_payment_price * 100
+  end
+
+  def price
+    self.price_in_pennies / 100.0
+  end
+
+  def price=(new_price)
+    self.price_in_pennies = new_price * 100
+  end
   
+  def instructor_at(location)
+    self.onsite_course_locations.where(location_id: location.id).first.instructor
+  end
+
+  def at(location)
+    self.onsite_course_locations.where(location_id: location.id)
+  end
+
 end

@@ -32,39 +32,58 @@
   }
 }
 
-div.online-course {
+div.online-course, div.onsite-course {
   border: 1px solid #E5E5E5;
   @include border-radius(3px);
   padding: 5px 10px;
 }
 
-div.online-course-inner {
+div.online-course-inner, div.onsite-course-inner {
   border-top: 1px solid #E5E5E5;
   padding-top: 10px;
   margin-bottom: 10px;
 }
 
-div.online-course-heading h2 {
-    margin-bottom: 5px;
-    margin-top: 15px;
+div.online-course-heading h2, div.onsite-course-heading h2 {
+  margin-bottom: 5px;
+  margin-top: 15px;
 }
 
 div.right div {
-    width: 150px;
-    margin-top: 5px;
+  width: 150px;
+  margin-top: 5px;
 }
 
 div.right p small {
-    line-height: 37px;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  line-height: 37px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 div.right {
-    height: 30px;
+  height: 30px;
+  width: 135px;
+  margin-left: 120px;
 }
 
 form.button_to {
-    width: 130px;
-    margin-top: 6px;
+  width: 130px;
+  margin-top: 6px;
+}
+
+input.btn.btn-primary.btn-mini {
+  margin-right: 15px;
+}
+
+input.btn.btn-success.btn-mini {
+  margin-right: 5px;
+}
+
+form.button_to div {
+  text-align: right;
+}
+
+div.left p.seats_remaining {
+  height: 5px;
+  margin-top: -35px;
 }
