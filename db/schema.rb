@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417232147) do
+ActiveRecord::Schema.define(:version => 20120418055413) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -157,5 +157,21 @@ ActiveRecord::Schema.define(:version => 20120417232147) do
 
   add_index "onsite_lessons", ["onsite_course_id"], :name => "index_onsite_lessons_on_onsite_course_id"
   add_index "onsite_lessons", ["position"], :name => "index_onsite_lessons_on_position"
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip_code"
+    t.string   "phone_number"
+    t.string   "stripe_customer_id"
+  end
 
 end
