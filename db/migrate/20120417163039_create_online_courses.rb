@@ -3,7 +3,7 @@ class CreateOnlineCourses < ActiveRecord::Migration
     create_table :online_courses do |t|
       t.string :title
       t.text :description
-      t.integer :price_in_pennies
+      t.integer :price_in_pennies, default: 0
       t.integer :position
       t.integer :market_sector_id
       t.integer :instructor_id
