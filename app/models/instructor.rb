@@ -1,5 +1,5 @@
 class Instructor < ActiveRecord::Base
-  attr_accessible :bio, :name, :profile_picture_name, :profile_picture_uid
+  attr_accessible :bio, :name, :profile_picture_name, :profile_picture_uid, :profile_picture
   image_accessor :profile_picture
   has_many :online_courses
   has_many :onsite_course_locations
