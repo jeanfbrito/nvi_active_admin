@@ -13,7 +13,7 @@ NvpAa::Application.routes.draw do
 
   resources :market_sectors
 
-  ActiveAdmin.routes(self)
+  # ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
