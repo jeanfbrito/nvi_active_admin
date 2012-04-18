@@ -330,21 +330,6 @@ article {
 			float: left;
 			margin-bottom: 5px;
 		}
-		&:nth-of-type(even) {
-			header {
-				h2 {
-					float: right;
-					&:after {
-						clear: both;
-					}
-				}
-			}
-			img {
-				float: right;
-				margin-right: 0px;
-				margin-left: 5px;
-			}
-		}
 	}
 }
 

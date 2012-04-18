@@ -4,10 +4,6 @@
       <div class="left">
         <a data-toggle="collapse" href="#lesson_<%= onsite_lesson.id %>_location_<%= location.id %>"><p><%= onsite_lesson.title %></p></a>
       </div>
-      <div class="clear"></div>
-      <div class="left">
-        <p style="float: left; margin-right: 10px;" class="seats_remaining"><small>Seats Remaining: <%= onsite_lesson.at(location).seats_remaining %></small></p>
-      </div>
     </div>
     <div class="right">
       <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_lesson.price) %></small></p>

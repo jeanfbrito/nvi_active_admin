@@ -11,7 +11,7 @@
       <li class="active"><a data-toggle="tab" href="#online">Online</a></li>
     <% end %>
     <% unless @onsite_courses.empty? %>
-    <li <% if @online_courses %> class="active" <% end %>><a data-toggle="tab" href="#onsite">On Site</a></li>
+    <li <% if @online_courses.empty? %> class="active" <% end %>><a data-toggle="tab" href="#onsite">On Site</a></li>
     <% end %>
     <li><a data-toggle="tab" href="#training-highlights">Training Highlights</a>
     </li>

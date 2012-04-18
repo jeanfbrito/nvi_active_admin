@@ -1,29 +1,11 @@
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>Position</th>
-    <th>Description</th>
-    <th>Active</th>
-    <th>Contact email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Careers</h1>
 
 <% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.position %></td>
-    <td><%= job.description %></td>
-    <td><%= job.active %></td>
-    <td><%= job.contact_email %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<article>
+  <header>
+    <h2><%= job.position %></h2>
+  </header>
+  <%= markdown(job.description) %>
+  <p>Interested?  <a href="mailto:careers@newventureprep.com">Email us at careers@newventureprep.com</a></p>
+</article>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Job', new_job_path %>
