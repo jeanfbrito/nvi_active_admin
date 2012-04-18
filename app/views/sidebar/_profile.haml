@@ -1,0 +1,20 @@
+#profile.well
+  %p#welcome= "Welcome back, #{current_user.first_name}"
+  / # = image_tag avatar_url(current_user), id: 'gravitar'
+  .clear
+  #navigation
+    %ul.nav.nav-list
+      %li.nav-header Profile
+      %li
+        = link_to '#' do
+          %i.icon-book
+          My Courses
+      = content_tag :li do
+        = link_to user_path(current_user) do
+          %i.icon-user
+          My Account
+      %li
+        = link_to logout_path do
+          %i.icon-off
+          Log Off
+.clear

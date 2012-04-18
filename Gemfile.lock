@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/willcosgrove/formtastic-bootstrap.git
+  revision: ef5346719320b50f7ae2676356f0f499b7210fb7
+  ref: ef534671
+  specs:
+    formtastic-bootstrap (1.2.0)
+      formtastic
+      rails (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,6 +223,7 @@ DEPENDENCIES
   country-select
   dragonfly (~> 0.9.12)
   fog
+  formtastic-bootstrap!
   friendly_id
   haml
   heroku

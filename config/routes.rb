@@ -1,4 +1,23 @@
 NvpAa::Application.routes.draw do
+
+  resources :line_items
+
+  resources :carts
+
+  resources :users do
+    member do
+      get 'edit'
+      post 'update'
+      get 'edit_payment'
+      post 'update_payment'
+    end
+  end
+  
+  resources :user_sessions
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
   resources :locations
 
   resources :onsite_lessons

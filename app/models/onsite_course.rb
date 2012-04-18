@@ -4,5 +4,6 @@ class OnsiteCourse < ActiveRecord::Base
   has_many :instructors, through: :onsite_course_locations
   has_many :locations, through: :onsite_course_locations
   has_many :onsite_lessons
+  has_many :line_items, as: :purchasable
   
 end

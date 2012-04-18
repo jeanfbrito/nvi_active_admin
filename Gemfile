@@ -41,6 +41,7 @@ gem 'redcarpet'
 gem 'acts_as_list'
 gem 'dragonfly', '~>0.9.12'
 gem 'fog'
+gem 'formtastic-bootstrap', github: 'willcosgrove/formtastic-bootstrap', ref: "ef534671"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

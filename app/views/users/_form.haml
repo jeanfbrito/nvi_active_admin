@@ -1,0 +1,14 @@
+= semantic_form_for @user do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :name, required: true
+    = f.input :email, required: true
+    = f.input :password, required: true
+    = f.input :password_confirmation, required: true
+    = f.input :phone_number
+    = f.input :country, priority_countries: ['United States', 'Canada'], required: true
+    = f.input :state, hint: 'Only if you\'re in the US'
+    = f.input :city
+    = f.input :zip_code
+  = f.buttons do
+    = f.commit_button button_html: { class: 'btn-primary' }

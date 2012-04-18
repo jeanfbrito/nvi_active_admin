@@ -1,0 +1,10 @@
+%h1 Your Account
+%ul.nav.nav-pills
+  %li
+    = link_to "Purchases", users_path
+  %li.active
+    = link_to "Update Profile", edit_user_path(current_user)
+  %li
+    = link_to "Change Payment", edit_payment_user_path(current_user)
+
+= render 'form'

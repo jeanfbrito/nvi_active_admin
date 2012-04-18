@@ -3,6 +3,7 @@ class OnsiteLesson < ActiveRecord::Base
   belongs_to :onsite_course
   has_many :onsite_lesson_locations
   has_many :locations, through: :onsite_lesson_locations
+  has_many :line_items, as: :purchasable
 
   def down_payment_price
     self.down_payment_price_in_pennies / 100.0

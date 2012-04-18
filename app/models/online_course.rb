@@ -4,6 +4,7 @@ class OnlineCourse < ActiveRecord::Base
   belongs_to :instructor
   belongs_to :market_sector
   has_many :online_lessons, order: :position
+  has_many :line_items, as: :purchasable
 
   alias_method :lessons, :online_lessons
 end
