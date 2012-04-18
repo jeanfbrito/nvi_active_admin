@@ -1,3 +1,3 @@
-ActiveAdmin.register OnlineCourse do
+# ActiveAdmin.register OnlineCourse do
   
-end
+# end

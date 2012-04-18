@@ -1,3 +1,3 @@
-ActiveAdmin.register MarketSector do
+# ActiveAdmin.register MarketSector do
   
-end
+# end
