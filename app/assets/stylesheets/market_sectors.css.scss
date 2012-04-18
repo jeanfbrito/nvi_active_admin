@@ -1,3 +1,50 @@
 // Place all the styles related to the market_sectors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.online-lesson.odd, .location.odd {
+  background-color: #f9f9f9;
+}
+.online-lesson:hover, .location:hover {
+  background-color: #f5f5f5;
+}
+.online-lesson, .location {
+  background-color: #fcfcfc;
+  padding: 0px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.online-lesson .lesson-header, .location .location-header {
+  overflow: hidden;
+}
+.lesson-header p, .location-header p {
+  line-height: 36px;
+  font-size: 11px;
+}
+.lesson-header, .location-header {
+  height: 36px;
+}
+.lesson-inner, .location-inner {
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+  p {
+    font-size: 11px;
+  }
+}
+
+div.online-course {
+  border: 1px solid #E5E5E5;
+  @include border-radius(3px);
+  padding: 5px 10px;
+}
+
+div.online-course-inner {
+  border-top: 1px solid #E5E5E5;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.online-course-heading h2 {
+    margin-bottom: 5px;
+    margin-top: 15px;
+}

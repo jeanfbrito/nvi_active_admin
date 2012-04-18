@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120417183101) do
+ActiveRecord::Schema.define(:version => 20120417232147) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -95,14 +95,16 @@ ActiveRecord::Schema.define(:version => 20120417183101) do
   create_table "online_lessons", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "price_in_pennies"
+    t.integer  "price_in_pennies", :default => 0
     t.string   "video_uid"
     t.integer  "online_course_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "position"
   end
 
   add_index "online_lessons", ["online_course_id"], :name => "index_online_lessons_on_online_course_id"
+  add_index "online_lessons", ["position"], :name => "index_online_lessons_on_position"
 
   create_table "onsite_course_locations", :force => true do |t|
     t.integer  "onsite_course_id"
@@ -150,8 +152,10 @@ ActiveRecord::Schema.define(:version => 20120417183101) do
     t.integer  "onsite_course_id"
     t.datetime "created_at",                                        :null => false
     t.datetime "updated_at",                                        :null => false
+    t.integer  "position"
   end
 
   add_index "onsite_lessons", ["onsite_course_id"], :name => "index_onsite_lessons_on_onsite_course_id"
+  add_index "onsite_lessons", ["position"], :name => "index_onsite_lessons_on_position"
 
 end

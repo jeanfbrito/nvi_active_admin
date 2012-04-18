@@ -5,3 +5,73 @@
   </header>
   <%= markdown(@market_sector.body) %>
 </article>
+<article>
+  <ul class="nav nav-tabs">
+    <% unless @online_courses.empty? %>
+      <li class="active"><a data-toggle="tab" href="#online">Online</a></li>
+    <% end %>
+    <% unless @onsite_courses.empty? %>
+    <li <% unless @online_courses %> class="active" <% end %>><a data-toggle="tab" href="#onsite">On Site</a></li>
+    <% end %>
+    <li><a data-toggle="tab" href="#training-highlights">Training Highlights</a>
+    </li>
+    <li><a data-toggle="tab" href="#benefits">Benefits</a>
+    </li>
+    <li><a data-toggle="tab" href="#customized-education">Customized Education</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <% unless @online_courses.empty? %>
+      <div class="tab-pane active" id="online">
+        <header>
+          <h2>Online Courses</h2>
+        </header>
+        <%= render @online_courses %>
+      </div>
+    <% end %>
+    <% unless @onsite_courses.empty? %>
+    <div class="tab-pane<% unless @online_courses %> active<% end %>" id="onsite">
+      <header>
+        <h2>On Site Courses</h2>
+      </header>
+      <% render @onsite_courses %>
+    </div>
+    <% end %>
+    <div class="tab-pane" id="training-highlights">
+      <header>
+      <h2>Training Highlights:</h2>
+      </header>
+      <ul>
+        <li>Financial Statement Modeling</li>
+        <li>Valuation Modeling</li>
+        <li>DCF, LBO, M&amp;A Modeling</li>
+        <li>Comps Modeling</li>
+        <li>Excel model templates on CD</li>
+        <li>900 pages step-by-step tutorial</li>
+        <li>Unlimited support</li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="benefits">
+      <header>
+      <h2>Benefits:</h2>
+      </header>
+      <ul>
+        <li>Students acquire immediate understanding of financial modeling and real-world application of financial knowledge</li>
+        <li>Students are equipped with technical expertise to ace interviews</li>
+        <li>Students acquire hands-on practical financial skills to be used right away at work</li>
+        <li>Students gain exposure to the daily work of real finance professionals through simulations and experienced instructor-led training</li>
+      </ul>
+    </div>
+    <div class="tab-pane" id="customized-education">
+      <header>
+      <h2>Customized Education:</h2>
+      </header>
+      <ul>
+        <li>Investment banking</li>
+        <li>MBA</li>
+        <li>Liberal arts major</li>
+        <li>Business major</li>
+      </ul>
+    </div>
+  </div>
+</article>

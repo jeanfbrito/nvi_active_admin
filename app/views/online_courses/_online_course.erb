@@ -1,0 +1,14 @@
+<div class="online-course">
+  <div class="online-course-heading">
+    <a data-toggle="collapse" href="#course_<%= online_course.id %>"><h2><%= online_course.title %> <small><%= online_course.instructor.name %></small></h2></a>
+  </div>
+  <div id="course_<%= online_course.id %>" class="online-course-body collapse in">
+    <div class="online-course-inner">
+      <%= online_course.description %>
+    </div>
+    <div class="lessons">
+      <h3>Modules</h3>
+      <%= render online_course.lessons %>
+    </div>
+  </div>
+</div>
