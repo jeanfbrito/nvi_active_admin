@@ -5,6 +5,7 @@ class OnsiteLesson < ActiveRecord::Base
   has_many :locations, through: :onsite_lesson_locations
   has_many :line_items, as: :purchasable
   after_create :import_locations
+  acts_as_list
 
   def down_payment_price
     self.down_payment_price_in_pennies / 100.0

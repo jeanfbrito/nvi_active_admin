@@ -3,7 +3,7 @@ class OnsiteCourse < ActiveRecord::Base
   has_many :onsite_course_locations
   has_many :instructors, through: :onsite_course_locations
   has_many :locations, through: :onsite_course_locations
-  has_many :onsite_lessons
+  has_many :onsite_lessons, order: :position
   has_many :line_items, as: :purchasable
   belongs_to :market_sector
   acts_as_list
