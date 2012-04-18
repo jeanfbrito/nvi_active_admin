@@ -5,7 +5,7 @@
     </div>
     <div class="right">
       <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(online_lesson.price) %></small></p>
-      <button style="float: left; margin-top: 10px;" class="btn btn-primary btn-mini">Add To Cart</button>
+      <%= add_to_cart(online_lesson) %>
     </div>
   </div>
   <div class="clear"></div>

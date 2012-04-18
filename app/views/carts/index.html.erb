@@ -1,25 +1,24 @@
-<h1>Listing carts</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Completed</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @carts.each do |cart| %>
-  <tr>
-    <td><%= cart.user_id %></td>
-    <td><%= cart.completed %></td>
-    <td><%= link_to 'Show', cart %></td>
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-    <td><%= link_to 'Destroy', cart, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<h1>Cart</h1>
+<table class="table table-striped cart">
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cart.line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.purchasable.title %></td>
+        <td><%= number_to_currency(line_item.purchasable.price) %></td>
+        <td class="actions"><%= remove_from_cart(line_item) %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>Total:</td>
+      <td><%= number_to_currency(@cart.total) %></td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Cart', new_cart_path %>

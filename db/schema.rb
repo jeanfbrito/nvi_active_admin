@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120418055413) do
+ActiveRecord::Schema.define(:version => 20120418144442) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(:version => 20120418055413) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "carts", :force => true do |t|
+    t.integer  "user_id"
+    t.boolean  "completed",  :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "carts", ["completed"], :name => "index_carts_on_completed"
+  add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
+
   create_table "instructors", :force => true do |t|
     t.string   "name"
     t.text     "bio"
@@ -54,6 +64,18 @@ ActiveRecord::Schema.define(:version => 20120418055413) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "purchasable_id"
+    t.string   "purchasable_type"
+    t.integer  "cart_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "price_in_pennies", :default => 0
+  end
+
+  add_index "line_items", ["cart_id"], :name => "index_line_items_on_cart_id"
+  add_index "line_items", ["purchasable_id"], :name => "index_line_items_on_purchasable_id"
 
   create_table "locations", :force => true do |t|
     t.string   "name"

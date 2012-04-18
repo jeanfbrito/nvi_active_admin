@@ -25,4 +25,9 @@ class User < ActiveRecord::Base
     self.last_name = split_name.last
   end
 
+  def credit_card_number
+    stripe_customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+    "XXXX-XXXX-XXXX-#{stripe_customer["active_card"]["last4"]}"
+  end
+
 end

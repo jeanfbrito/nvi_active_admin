@@ -1,9 +1,9 @@
 NvpAa::Application.routes.draw do
 
-  resources :line_items
-
   resources :carts
-
+  match '/cart' => 'carts#index', as: :cart
+  match '/add_to_cart' => 'line_items#create', as: :add_to_cart
+  match '/remove_from_cart' => 'line_items#destroy', as: :remove_from_cart
   resources :users do
     member do
       get 'edit'
