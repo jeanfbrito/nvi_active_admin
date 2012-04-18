@@ -1,29 +1,13 @@
-<h1>Listing instructors</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Bio</th>
-    <th>Profile picture uid</th>
-    <th>Profile picture name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<h1>Instructors</h1>
 <% @instructors.each do |instructor| %>
-  <tr>
-    <td><%= instructor.name %></td>
-    <td><%= instructor.bio %></td>
-    <td><%= instructor.profile_picture_uid %></td>
-    <td><%= instructor.profile_picture_name %></td>
-    <td><%= link_to 'Show', instructor %></td>
-    <td><%= link_to 'Edit', edit_instructor_path(instructor) %></td>
-    <td><%= link_to 'Destroy', instructor, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Instructor', new_instructor_path %>
+  <article class="bio">
+    <header><h2><%= instructor.name %></h2></header>
+    <div class="image">
+      <img alt="<%= instructor.name %>" src="<%= instructor.profile_picture.thumb('120x120#').url %>" />
+    </div>
+    <div class="bio">
+      <%= markdown(instructor.bio) %>
+    </div>
+  </article>
+  <div class="clear"></div>
+<% end %> 
