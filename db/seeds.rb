@@ -54,25 +54,25 @@ lessons = [{
             {
               title: "Operations and Growth",
               description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.  ",
-              price: 500000
+              price: 5000
             }
           ]
 
-oc = OnsiteCourse.new(title: "Entrepreneurship", description: "This course has been developed for anyone interested in learning about what is required to start a new business. The actual statistics on new business start-up's are that most fail during the initial twelve to eighteen months of their existence. Why is that? Primarily because entrepreneurs are experts in their technology, but have little or no education in business. Consequently, they experience a variety of predictable pitfalls that typically lead to the demise of the business that can be avoided with the education provided in this course. The course is designed to help you through the process of proving the real value of your concept and developing a clear explanation of the value proposition of your business model. Once that is accomplished the course takes you through the step-by-step process of understanding what has to be done to actually bring your concept to market as a commercially viable and profitable enterprise.", price: "1000000")
+oc = OnsiteCourse.new(title: "Entrepreneurship", description: "This course has been developed for anyone interested in learning about what is required to start a new business. The actual statistics on new business start-up's are that most fail during the initial twelve to eighteen months of their existence. Why is that? Primarily because entrepreneurs are experts in their technology, but have little or no education in business. Consequently, they experience a variety of predictable pitfalls that typically lead to the demise of the business that can be avoided with the education provided in this course. The course is designed to help you through the process of proving the real value of your concept and developing a clear explanation of the value proposition of your business model. Once that is accomplished the course takes you through the step-by-step process of understanding what has to be done to actually bring your concept to market as a commercially viable and profitable enterprise.", price: 135000)
 
 
-oc_corp = oc.dup
+oc_indv = oc.dup
 oc_univ = oc.dup
 
-oc_corp.market_sector_id = 2
+oc_indv.market_sector_id = 1
 oc_univ.market_sector_id = 3
 
-oc_corp.save
+oc_indv.save
 oc_univ.save
 
-oc_corp.locations << Location.all
+oc_indv.locations << Location.all
 oc_univ.locations << Location.all
 
-[oc_corp, oc_univ].each do |course|
+[oc_indv, oc_univ].each do |course|
   course.lessons.create(lessons)
 end
