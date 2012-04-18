@@ -1,5 +1,9 @@
 NvpAa::Application.routes.draw do
 
+  resources :news
+
+  resources :jobs
+
   resources :carts
   match '/cart' => 'carts#index', as: :cart
   match '/add_to_cart' => 'line_items#create', as: :add_to_cart

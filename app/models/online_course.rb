@@ -7,4 +7,12 @@ class OnlineCourse < ActiveRecord::Base
   has_many :line_items, as: :purchasable
 
   alias_method :lessons, :online_lessons
+
+  def price
+    self.price_in_pennies / 100.0
+  end
+
+  def price=(new_price)
+    self.price_in_pennies = new_price * 100
+  end
 end
