@@ -3,7 +3,7 @@ class CreateOnsiteCourses < ActiveRecord::Migration
     create_table :onsite_courses do |t|
       t.string :title
       t.text :description
-      t.integer :price_in_pennies
+      t.integer :price_in_pennies, default: 0
       t.integer :down_payment_price_in_pennies, default: 200000
       t.integer :position
       t.integer :market_sector_id
