@@ -1,3 +1,3 @@
-# ActiveAdmin.register Instructor do
+ActiveAdmin.register Instructor do
   
-# end
+end

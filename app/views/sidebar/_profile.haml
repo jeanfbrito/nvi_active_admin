@@ -6,13 +6,10 @@
     %ul.nav.nav-list
       %li.nav-header Profile
       %li
-        = link_to '#' do
-          %i.icon-book
-          My Courses
       = content_tag :li do
-        = link_to user_path(current_user) do
+        = link_to users_path do
           %i.icon-user
-          My Account
+          My Home
       %li
         = link_to logout_path do
           %i.icon-off
