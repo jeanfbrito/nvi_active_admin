@@ -232,6 +232,7 @@ DEPENDENCIES
   meta_search (>= 1.1.0.pre)
   multi_json (~> 1.3.2)
   pg
+  rack-cache
   rails (= 3.2.3)
   redcarpet
   sass-rails (~> 3.2.3)
