@@ -13,6 +13,16 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      @user.auto_login
+      redirect_to users_path
+    else
+      render :new
+    end
+  end
+
   def edit_payment
     @user = current_user
   end

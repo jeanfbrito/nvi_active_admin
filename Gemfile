@@ -7,6 +7,8 @@ gem 'rails', '3.2.3'
 
 group :development do
   gem 'sqlite3'
+  gem 'heroku'
+  gem 'taps'
 end
 
 group :production do
@@ -28,7 +30,6 @@ end
 gem "multi_json", "~> 1.3.2"
 gem 'jquery-rails'
 gem 'haml'
-gem 'heroku'
 gem 'sorcery'
 gem 'country-select'
 gem 'activeadmin'
