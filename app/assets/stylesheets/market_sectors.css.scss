@@ -105,3 +105,50 @@ div.onsite-lesson {
   border-left-width: 0;
   border-color: #e5e5e5;
 }
+
+div.location-header {
+  height: 60px;
+}
+
+div.right {
+  height: 60px;
+  width: 150px;
+}
+
+div.reserve_course {
+  height: 20px;
+  margin-top: -30px;
+}
+
+div.reserve_course p {
+  height: 15px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+form.button_to div {
+  height: 0;
+  width: 0;
+}
+
+div.reserve_course p small {
+  position: relative;
+  top: 18px;
+  right: 70px;
+}
+
+div.add_course_to_cart p small {
+  position: relative;
+  bottom: 5px;
+  right: 12px;
+  text-align: right;
+}
+
+input.btn.btn-success.btn-mini {
+  margin-top: 38px;
+  margin-left: 53px;
+}

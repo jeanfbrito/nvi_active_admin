@@ -15,9 +15,8 @@
           %a{:href => "#"} Events
         %li
           = link_to "Careers", jobs_path
-        - if logged_in?
-          %li
-            = link_to "Student Profile", users_path
+        %li
+          = link_to "Student Profile", users_path
         %li
           %a{:href => "#"} Our Campus
         - if logged_in?
