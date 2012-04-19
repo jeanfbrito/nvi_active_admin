@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_login, except: [:new]
+  before_filter :require_login, except: [:new, :create]
 
   def index
     @user = current_user
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      @user.auto_login
+      auto_login(@user)
       redirect_to users_path
     else
       render :new

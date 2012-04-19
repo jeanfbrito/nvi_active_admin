@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   attr_accessor :stripe_card_token
 
   # validates_length_of :password, minimum: 6
-  # validates_confirmation_of :password, :message => "should match confirmation", :if => :password
+  validates_confirmation_of :password, :message => "should match confirmation", :if => :password
   has_many :carts
   has_many :line_items, through: :carts
   has_many :online_courses, through: :line_items
