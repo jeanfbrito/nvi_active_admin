@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_filter :require_login, except: [:new]
 
   def index
+    @user = current_user
+  end
+
+  def new
+    @user = User.new
   end
 
   def edit

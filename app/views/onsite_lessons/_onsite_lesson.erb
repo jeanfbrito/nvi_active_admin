@@ -9,10 +9,6 @@
       <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_lesson.price) %></small></p>
       <%= add_to_cart(onsite_lesson) %>
     </div>
-    <div class="right">
-      <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_lesson.down_payment_price) %></small></p>
-      <%= add_reservation_to_cart(onsite_lesson, location) %>
-    </div>
   </div>
   <div class="clear"></div>
   <div class="lesson-body collapse" id="lesson_<%= onsite_lesson.id %>_location_<%= location.id %>">
