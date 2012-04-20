@@ -1,5 +1,4 @@
 class LineItemsController < InheritedResources::Base
-  before_filter :require_login
   def create
     @line_item = current_cart.line_items.new(params[:line_item])
     if @line_item.save

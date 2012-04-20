@@ -10,6 +10,10 @@ class Cart < ActiveRecord::Base
     self.line_items.count
   end
 
+  def empty?
+    self.size == 0
+  end
+
   def total
     total_in_pennies / 100.0
   end

@@ -7,6 +7,7 @@ class PagesController < HighVoltage::PagesController
   def choose_tab
     case params[:id]
     when 'index' then set_tab 'home'
+    when 'about_us' then set_tab 'about_us'
     end
   end
 

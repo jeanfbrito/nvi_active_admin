@@ -23,4 +23,8 @@
   </tbody>
 </table>
 
-<%= link_to "Checkout", cart_finalize_path, class: 'btn btn-primary btn-large' %>
+<% if @cart.empty? %>
+  <%= link_to "Checkout", '', class: "btn btn-primary btn-large disabled", onclick: 'return false'  %>
+<% else %>
+  <%= link_to "Checkout", cart_finalize_path, class: "btn btn-primary btn-large" %>
+<% end %>

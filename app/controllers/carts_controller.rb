@@ -1,5 +1,4 @@
 class CartsController < InheritedResources::Base
-  before_filter :require_login
 
   def index
     @cart = current_cart

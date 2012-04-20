@@ -19,9 +19,8 @@
           = link_to "Student Profile", users_path
         %li
           %a{:href => "#"} Our Campus
-        - if logged_in?
-          %li
-            = link_to "Cart (#{current_cart.size})", cart_path
+        %li
+          = link_to "Cart (#{current_cart.size})", cart_path
         %li
           %a.nobg{:href => "#"}
             = image_tag 'rss.gif'
