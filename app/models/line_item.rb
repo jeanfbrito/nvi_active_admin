@@ -5,14 +5,13 @@ class LineItem < ActiveRecord::Base
   validates_presence_of :cart_id
   validates_presence_of :purchasable_id
   validates_presence_of :purchasable_type
-  validate :seats_available, if: :reservation
   before_save :add_price
 
   attr_accessor :reservation, :location_id
 
   def add_price
     if self.reservation
-      self.price_in_pennies = self.purchasable_id.down_payment_price_in_pennies
+      self.price_in_pennies = self.purchasable.down_payment_price_in_pennies
     else
       self.price_in_pennies = self.purchasable.price_in_pennies
     end
@@ -21,6 +20,6 @@ class LineItem < ActiveRecord::Base
   private
 
   def seats_available
-    OnsiteCourseLocations.where(onsite_course_id: self.purchasable_id, location_id: self.location_id).first.seats_available?
+    OnsiteCourseLocation.where(onsite_course_id: self.purchasable_id, location_id: self.location_id).first.seats_available?
   end
 end
