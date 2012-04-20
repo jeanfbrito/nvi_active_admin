@@ -32,5 +32,6 @@ ActiveAdmin.register OnlineLesson do
     column "Description" do |online_lesson|
       truncate(online_lesson.description, length: 80)
     end
+    default_actions
   end
 end

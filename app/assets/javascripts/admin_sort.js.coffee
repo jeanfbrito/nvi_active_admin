@@ -7,13 +7,13 @@ sendSortRequestOfModel = (model_name) ->
     dataType: 'script'
     url: '/admin/' + model_name + '/sort'
 
-jQuery ($) ->
+# jQuery ($) ->
 
-  # home page slides
-  if $('body.admin_online_lessons.index').length
-    $( "#online_lessons tbody" ).disableSelection()
-    $( "#online_lessons tbody" ).sortable
-      axis: 'y'
-      cursor: 'move'
-      update: (event, ui) ->
-        sendSortRequestOfModel("online_lessons")
+#   # home page slides
+#   if $('body.admin_online_lessons.index').length
+#     $( "#online_lessons tbody" ).disableSelection()
+#     $( "#online_lessons tbody" ).sortable
+#       axis: 'y'
+#       cursor: 'move'
+#       update: (event, ui) ->
+#         sendSortRequestOfModel("online_lessons")
