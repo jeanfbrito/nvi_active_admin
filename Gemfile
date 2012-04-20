@@ -9,10 +9,12 @@ group :development do
   gem 'sqlite3'
   gem 'heroku'
   gem 'taps'
+  gem 'quiet_assets'
 end
 
 group :production do
   gem 'pg'
+  gem 'dalli'
 end
 
 # Gems used only for assets and not required

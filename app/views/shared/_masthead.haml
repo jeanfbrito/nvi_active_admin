@@ -36,4 +36,5 @@
           %input.btn.btn-small{:href => "#", :type => "submit", :value => "Search"}/
     .clear
   / Navigation
-  = render 'shared/navigation'
+  - cache ["navigation"] + @market_sectors do
+    = render 'shared/navigation'

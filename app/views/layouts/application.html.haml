@@ -18,7 +18,8 @@
         / Content Seciton
         #content_section
           / News Updates
-          = render('shared/news_updates')
+          - cache ["news_update", @news_headline] do
+            = render('shared/news_updates')
           .clear
           / Col1
           .col1.span6
@@ -32,13 +33,16 @@
             - if current_user
               = render "sidebar/profile"
             - else
-              = render "sidebar/login"
+              - cache "login" do
+                = render "sidebar/login"
             = yield(:sidebar)
+            // = render "sidebar/quick_links"
           .clear
           // Pre-footer
           = yield(:pre_footer)
     / Footer Section
-    = render('shared/footer')
+    - cache ["footer"] + @market_sectors do
+      = render('shared/footer')
   :javascript
     var _gauges = _gauges || [];
     (function() {

@@ -13,6 +13,17 @@
           = link_to "University Education", '#'
         %li
           = link_to "About Us", '#'
+    - @market_sectors.each do |market_sector|
+      - cache ["footer_content", market_sector] do
+        .column
+          %h5= market_sector.name
+          %ul
+            - if market_sector.has_online?
+              %li
+                = link_to "Online Courses", market_sector_path(market_sector, anchor: 'online')
+            - if market_sector.has_onsite?
+              %li
+                = link_to "Onsite Courses", market_sector_path(market_sector, anchor: 'onsite')
     #contact_us.column.right
       %h5 Contact Us
       %ul
@@ -31,14 +42,13 @@
   #pagebottom
     /! copyright
     .copyright
-      © 2011 
+      © 2012 
       %a{href: "#"}
       New Venture Prep
-    %a.top{href: "#"} Top
     /! Social Networks
     .social_networks
       %ul
-        %li.services Follows us our services
+        %li.services Follow us on
         %li
           %a{href: "#"}
             = image_tag "facebook_icon.gif"

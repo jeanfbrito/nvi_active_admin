@@ -5,7 +5,7 @@ class OnsiteCourse < ActiveRecord::Base
   has_many :locations, through: :onsite_course_locations
   has_many :onsite_lessons, order: :position
   has_many :line_items, as: :purchasable
-  belongs_to :market_sector
+  belongs_to :market_sector, touch: true
   acts_as_list
   alias_method :lessons, :onsite_lessons
 
