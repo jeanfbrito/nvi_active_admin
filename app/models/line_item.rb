@@ -21,7 +21,6 @@ class LineItem < ActiveRecord::Base
   private
 
   def seats_available
-    OnsiteLessonLocations.where(onsite_lesson_id: self.purchasable_id, location_id: self.location_id).first.seats_available?
+    OnsiteCourseLocations.where(onsite_course_id: self.purchasable_id, location_id: self.location_id).first.seats_available?
   end
-
 end
