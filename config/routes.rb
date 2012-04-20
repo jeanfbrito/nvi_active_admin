@@ -5,6 +5,7 @@ NvpAa::Application.routes.draw do
   resources :jobs
 
   resources :carts
+  match '/cart/charge' => 'carts#charge', as: :cart_charge
   match '/cart' => 'carts#index', as: :cart
   match '/cart/finalize' => 'carts#finalize', as: :cart_finalize
   match '/add_to_cart' => 'line_items#create', as: :add_to_cart

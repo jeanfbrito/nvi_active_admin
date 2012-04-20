@@ -20,4 +20,10 @@ class ApplicationController < ActionController::Base
     @news_headline = News.published.last
     @market_sectors = MarketSector.all
   end
+
+  protected
+
+  def not_authenticated
+    redirect_to :login, :alert => "Please login or sign up first."
+  end
 end

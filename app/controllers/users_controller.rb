@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       auto_login(@user)
-      redirect_to users_path
+      redirect_back_or_to :users
     else
       render :new
     end
@@ -36,11 +36,7 @@ class UsersController < ApplicationController
     )
     @user.stripe_customer_token = stripe_customer.id
     @user.save
-    if params[:return_to]
-      redirect_to params[:return_to]
-    else
-      redirect_to :users
-    end
+    redirect_back_or_to :users
   end
 
 end
