@@ -89,7 +89,7 @@ div.left p.seats_remaining {
 }
 
 div.left a p {
-  width: 200px;
+  width: 410px;
   height: 20px;
 }
 
@@ -154,4 +154,15 @@ div.column {
 
 div.column.right {
   margin-left: 0;
+}
+
+.onsite-course-heading div.right p {
+  margin-left: -250px;
+  font-size: 9px;
+  width: 395px;
+  line-height: 11px;
+  text-align: right;
+  margin-top: 20px;
+  color: green;
+  opacity: 0.8;
 }

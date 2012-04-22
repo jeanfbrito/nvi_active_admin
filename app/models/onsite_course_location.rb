@@ -3,6 +3,7 @@ class OnsiteCourseLocation < ActiveRecord::Base
   belongs_to :location
   belongs_to :onsite_course
   belongs_to :instructor
+  has_many :onsite_lesson_locations
   after_create :add_to_lessons
   before_destroy :destroy_from_lessons
 
@@ -18,6 +19,14 @@ class OnsiteCourseLocation < ActiveRecord::Base
     lessons.each do |lesson|
       lesson.locations.delete(self.location)
     end
+  end
+
+  def start_date
+    self.onsite_lesson_locations.order('date').first.date
+  end
+
+  def end_date
+    self.onsite_lesson_locations.order('date desc').first.date
   end
 
 end

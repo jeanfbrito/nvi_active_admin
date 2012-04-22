@@ -24,13 +24,13 @@ class OnsiteCourse < ActiveRecord::Base
   def price=(new_price)
     self.price_in_pennies = new_price * 100
   end
-  
+
   def instructor_at(location)
     self.onsite_course_locations.where(location_id: location.id).first.instructor
   end
 
   def at(location)
-    self.onsite_course_locations.where(location_id: location.id)
+    self.onsite_course_locations.where(location_id: location.id).first
   end
 
 end

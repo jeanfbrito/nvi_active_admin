@@ -1,17 +1,21 @@
-<div class="onsite-course">
-  <div class="onsite-course-heading">
-    <div class="left">
-      <a data-toggle="collapse" href="#course_<%= onsite_course.id %>"><h2><%= onsite_course.title %> <small><%= pluralize(onsite_course.locations.count, "location") %></small></h2></a>
+<% cache onsite_course do %>
+  <div class="onsite-course">
+    <div class="onsite-course-heading">
+      <div class="left">
+        <a data-toggle="collapse" href="#course_<%= onsite_course.id %>"><h2><%= onsite_course.title %> <small><%= pluralize(onsite_course.locations.count, "location") %></small></h2></a>
+      </div>
+      <div class="right"><p><sup>*</sup>Reserve a seat for a small down payment, with the balence to be paid before the class starts</p>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="course_<%= onsite_course.id %>" class="onsite-course-body collapse in">
+      <div class="onsite-course-inner">
+        <%= onsite_course.description %>
+      </div>
+      <div class="locations">
+        <h3>Locations</h3>
+        <%= render onsite_course.locations.order(:name), onsite_course: onsite_course %>
+      </div>
     </div>
   </div>
-  <div class="clear"></div>
-  <div id="course_<%= onsite_course.id %>" class="onsite-course-body collapse in">
-    <div class="onsite-course-inner">
-      <%= onsite_course.description %>
-    </div>
-    <div class="locations">
-      <h3>Locations</h3>
-      <%= render onsite_course.locations, onsite_course: onsite_course %>
-    </div>
-  </div>
-</div>
+<% end %>

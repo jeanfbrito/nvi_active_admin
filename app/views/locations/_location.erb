@@ -1,25 +1,27 @@
-<div class="location <%= cycle 'odd', 'even', name: "onsite_course_#{onsite_course.id}" %>">
-  <div class="location-header">
-    <div class="left">
-      <a data-toggle="collapse" href="#location_<%= location.id %>"><p><%= location.name %></p></a>
-    </div>
-    <div class="right">
-      <div class="add_course_to_cart">
-        <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_course.price) %></small></p>
-        <%= add_to_cart(onsite_course) %>
+<% cache onsite_course.at(location) do %>
+  <div class="location <%= cycle 'odd', 'even', name: "onsite_course_#{onsite_course.id}" %>">
+    <div class="location-header">
+      <div class="left">
+        <a data-toggle="collapse" href="#location_<%= location.id %>"><p><%= location.name %> <% if onsite_course.at(location).start_date && onsite_course.at(location).end_date %><small><%= onsite_course.at(location).start_date.strftime("%m/%d") %> - <%= onsite_course.at(location).end_date.strftime("%m/%d") %></small><% end %></p></a>
       </div>
-      <div class="reserve_course">
-        <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_course.down_payment_price) %></small></p>
-        <%= add_reservation_to_cart(onsite_course, location) %>
+      <div class="right">
+        <div class="add_course_to_cart">
+          <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_course.price) %></small></p>
+          <%= add_to_cart(onsite_course) %>
+        </div>
+        <div class="reserve_course">
+          <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(onsite_course.down_payment_price) %></small></p>
+          <%= add_reservation_to_cart(onsite_course, location) %>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div class="location-body collapse" id="location_<%= location.id %>">
+      <div class="location-inner">
+        <p>Location meta data goes here</p>
+        <%= render onsite_course.lessons, location: location %>
       </div>
     </div>
   </div>
   <div class="clear"></div>
-  <div class="location-body collapse" id="location_<%= location.id %>">
-    <div class="location-inner">
-      <p>Location meta data goes here</p>
-      <%= render onsite_course.lessons, location: location %>
-    </div>
-  </div>
-</div>
-<div class="clear"></div>
+<% end %>
