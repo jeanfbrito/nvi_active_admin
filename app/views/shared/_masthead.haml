@@ -26,10 +26,11 @@
             = image_tag 'rss.gif'
         %li.last
     .clear
+    #flags
+      = image_tag 'flags.png'
     / top search
     .top_search
       .advance_search
-        %a{:href => "#"} Advanced Search
         %form.form-search.form-inline
           %input.search-query.input-medium{:name => "txt", :placeholder => "Search", :type => "text"}/
           %input.btn.btn-small{:href => "#", :type => "submit", :value => "Search"}/

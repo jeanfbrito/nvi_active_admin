@@ -242,12 +242,20 @@ body {
 =======================================================================
 */
 
+#flags {
+  width: 330px;
+  position: relative;
+  left: 70px;
+  height: 0px;
+  margin-top: -4px;
+}
+
 .top_search {
 	position:relative;
-	height:51px !important;
+	height:20px !important;
 	float:right;
 	width:327px;
-	padding-bottom:15px;
+	margin-top: 30px;
 }
 .advance_search {
 	position:relative;
