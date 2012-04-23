@@ -1,5 +1,5 @@
 <% cache onsite_course.at(location) do %>
-  <div class="location <%= cycle 'odd', 'even', name: "onsite_course_#{onsite_course.id}" %>">
+  <div class="location <%= cycle 'odd', 'even', name: "onsite_course" %>">
     <div class="location-header">
       <div class="left">
         <a data-toggle="collapse" href="#location_<%= location.id %>"><p><%= location.name %> <% if onsite_course.at(location).start_date && onsite_course.at(location).end_date %><small><%= onsite_course.at(location).start_date.strftime("%m/%d") %> - <%= onsite_course.at(location).end_date.strftime("%m/%d") %></small><% end %></p></a>

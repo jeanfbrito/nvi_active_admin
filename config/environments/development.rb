@@ -34,4 +34,12 @@ NvpAa::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.cache_store = :dalli_store
+  config.action_dispatch.rack_cache = {
+    :metastore    => Dalli::Client.new,
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
+  config.static_cache_control = "public, max-age=2592000"
 end
