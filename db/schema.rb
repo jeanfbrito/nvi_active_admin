@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120422033008) do
+ActiveRecord::Schema.define(:version => 20120423175312) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string    "resource_id",   :null => false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20120422033008) do
     t.string    "zip_code"
     t.timestamp "created_at",     :null => false
     t.timestamp "updated_at",     :null => false
+    t.string    "country"
   end
 
   create_table "market_sectors", :force => true do |t|
