@@ -1,13 +1,17 @@
-<h1>Instructors</h1>
-<% @instructors.each do |instructor| %>
-  <article class="bio">
-    <header><h2><%= instructor.name %></h2></header>
-    <div class="image">
-      <img alt="<%= instructor.name %>" src="<%= instructor.profile_picture.thumb('100x125#').url %>" />
-    </div>
-    <div class="bio">
-      <%= markdown(instructor.bio) %>
-    </div>
-  </article>
-  <div class="clear"></div>
-<% end %> 
+<% cache @instructors do %>
+  <h1>Instructors</h1>
+  <% @instructors.each do |instructor| %>
+    <% cache instructor do %>
+      <article class="bio">
+        <header><h2><%= instructor.name %></h2></header>
+        <div class="image">
+          <img alt="<%= instructor.name %>" src="<%= instructor.profile_picture.thumb('100x125#').url %>" />
+        </div>
+        <div class="bio">
+          <%= markdown(instructor.bio) %>
+        </div>
+      </article>
+      <div class="clear"></div>
+    <% end %>
+  <% end %> 
+<% end %>
