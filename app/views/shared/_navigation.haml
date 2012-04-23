@@ -1,9 +1,10 @@
-#menu.navigation
-  #smoothmenu1
-    = tabs_tag builder: NavigationTabBuilder do |tab|
-      = tab.home "Home", root_path, class: 'first'
-      - MarketSector.find_each do |market_sector|
-        = tab.send(market_sector.name.parameterize.underscore.to_sym, market_sector.name, market_sector_path(market_sector)) 
-      = tab.instructors "Instructors", instructors_path
-      = tab.about_us "About Us", page_path("about_us"), class: 'last'
-  .clear
+- cache request.env['PATH_INFO'] do
+  #menu.navigation
+    #smoothmenu1
+      = tabs_tag builder: NavigationTabBuilder do |tab|
+        = tab.home "Home", root_path, class: 'first'
+        - MarketSector.find_each do |market_sector|
+          = tab.send(market_sector.name.parameterize.underscore.to_sym, market_sector.name, market_sector_path(market_sector)) 
+        = tab.instructors "Instructors", instructors_path
+        = tab.about_us "About Us", page_path("about_us"), class: 'last'
+    .clear

@@ -1,39 +1,41 @@
-#masterhead
-  / Logo
-  .logo
-    = link_to root_path do
-      = image_tag 'logo.png'
-  / masterhead Right Section
-  .topright_sec
-    / top navigation
-    .topnavigation
-      %ul
-        %li.first
-        %li
-          = link_to "News", news_index_path
-        %li
-          %a{:href => "#"} Events
-        %li
-          = link_to "Careers", jobs_path
-        %li
-          = link_to "Student Profile", users_path
-        %li
-          %a{:href => "#"} Our Campus
-        %li
-          = link_to "Cart (#{current_cart.size})", cart_path
-        %li
-          %a.nobg{:href => "#"}
-            = image_tag 'rss.gif'
-        %li.last
-    .clear
-    #flags
-      = image_tag 'flags_none.png'
-    / top search
-    .top_search
-      .advance_search
-        %form.form-search.form-inline
-          %input.search-query.input-medium{:name => "txt", :placeholder => "Search", :type => "text"}/
-          %input.btn.btn-small{:href => "#", :type => "submit", :value => "Search"}/
-    .clear
-  / Navigation
-  = render 'shared/navigation'
+- cache ["masthead", request.env['PATH_INFO'], current_cart] do
+  #masterhead
+    / Logo
+    .logo
+      = link_to root_path do
+        = image_tag 'logo.png'
+    / masterhead Right Section
+    .topright_sec
+      / top navigation
+      - cache current_cart do
+        .topnavigation
+          %ul
+            %li.first
+            %li
+              = link_to "News", news_index_path
+            %li
+              %a{:href => "#"} Events
+            %li
+              = link_to "Careers", jobs_path
+            %li
+              = link_to "Student Profile", users_path
+            %li
+              %a{:href => "#"} Our Campus
+            %li
+              = link_to "Cart (#{current_cart.size})", cart_path
+            %li
+              %a.nobg{:href => "#"}
+                = image_tag 'rss.gif'
+            %li.last
+        .clear
+      #flags
+        = image_tag 'flags_none.png'
+      / top search
+      .top_search
+        .advance_search
+          %form.form-search.form-inline
+            %input.search-query.input-medium{:name => "txt", :placeholder => "Search", :type => "text"}/
+            %input.btn.btn-small{:href => "#", :type => "submit", :value => "Search"}/
+      .clear
+    / Navigation
+    = render 'shared/navigation'
