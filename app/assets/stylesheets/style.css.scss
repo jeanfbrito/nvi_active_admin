@@ -165,6 +165,12 @@ p > input {
 	// @include box-shadow(0px 5px 15px 5px white);
 }
 
+div.navigation {
+  border-radius: 5px;
+  border-bottom: #081f48 solid 1px;
+  border-top: #154eb0 solid 1px;
+}
+
 body {
 	margin-top: 150px;
 }
