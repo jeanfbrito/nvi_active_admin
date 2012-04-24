@@ -171,6 +171,16 @@ div.navigation {
   border-top: #154eb0 solid 1px;
 }
 
+.navigation ul li a.first {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.navigation ul li a.last {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 body {
 	margin-top: 150px;
 }
