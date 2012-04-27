@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def load_layout_requirements
-    @news_headline = News.published.last
-    @market_sectors = MarketSector.all
+    @current_news_headline = News.published.last
+    @all_market_sectors = MarketSector.all
   end
 
   protected

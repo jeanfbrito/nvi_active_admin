@@ -1,7 +1,7 @@
 .news_updates
   %span.news_update News Updates
   %span.news_date
-    %em= @news_headline.created_at
+    %em= @current_news_headline.created_at
   %span.news_des
     = link_to news_index_path do
-      = @news_headline.blurb
+      = @current_news_headline.blurb

@@ -13,7 +13,7 @@
           = link_to "University Education", '#'
         %li
           = link_to "About Us", '#'
-    - @market_sectors.each do |market_sector|
+    - @all_market_sectors.each do |market_sector|
       - cache ["footer_content", market_sector] do
         .column
           %h5= market_sector.name

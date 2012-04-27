@@ -19,7 +19,7 @@
         / Content Seciton
         #content_section
           / News Updates
-          - cache ["news_update", @news_headline] do
+          - cache ["news_update", @current_news_headline] do
             = render('shared/news_updates')
           .clear
           / Col1
@@ -42,7 +42,7 @@
           // Pre-footer
           = yield(:pre_footer)
     / Footer Section
-    - cache ["footer"] + @market_sectors do
+    - cache ["footer"] + @all_market_sectors do
       = render('shared/footer')
   :javascript
     var _gauges = _gauges || [];

@@ -1,34 +1,25 @@
-= render 'shared/banner_slider'
-.row
-  %article
-    %header
-      %h2 New Venture Institute
-    %p
-      New Venture Institute is a global entrepreneurship training organization that exclusively provides education for global best practices for entrepreneurship.
-    %p
-      We provide independent self-­study programs and online seminars as well as on-­site instructor-­led training and e-­learning services for independent students, corporations, investment banks and educational institutions.
-    %p
-      Our commitment to excellence is demonstrated in our curriculum, relationships and execution through every step of the entrepreneurial process for our students. Our students can thus focus on launching and growing their own ventures from seed to fruition.
-    %p
-      Find out why more and more talented entrepreneurs are turning to New Venture Institute.
-.row
-  %article.span3
-    %header
-      = link_to market_sectors_path(1) do
-        %h2 Independent Learners
-    %p
-      Our independent self-­study program is an intensive online training program that equips students and professionals direct experience with entrepreneurship best practices as defined by the nation's top academics and practicing entrepreneurs. After completion of the course, you will be prepared to launch your own venture or to be a part of an existing one. This is our most popular program, appealing to students, MBAs, investment bankers and finance professionals in almost every industry.
-  %article.span3
-    %header
-      = link_to market_sectors_path(2) do
-        %h2 Corporate Education
-    %p
-      Our corporate training program is an accelerated online and on-­site training to both employers and employees that lays a foundation for fundamental financial skills training via interactive e-­learning modules, hands-­on training by seasoned instructors, customized curriculum and flexible location options.
-  %article.span3
-    %header
-      = link_to market_sectors_path(3) do
-        %h2 University Education
-    %p
-      Our university and college education programs equip both students and working professionals with thorough training in real-­world knowledge of finance and investment banking on the campuses of leading undergraduate and graduate academic institutions.
-- content_for :pre_footer do
-  = render 'shared/footer_slider'
+- cache ["home_page", @all_market_sectors] do
+  = render 'shared/banner_slider'
+  .row
+    %article
+      %header
+        %h2 New Venture Institute
+      %p
+        New Venture Institute is a global entrepreneurship training organization that exclusively provides education for global best practices for entrepreneurship.
+      %p
+        We provide independent self-­study programs and online seminars as well as on-­site instructor-­led training and e-­learning services for independent students, corporations, investment banks and educational institutions.
+      %p
+        Our commitment to excellence is demonstrated in our curriculum, relationships and execution through every step of the entrepreneurial process for our students. Our students can thus focus on launching and growing their own ventures from seed to fruition.
+      %p
+        Find out why more and more talented entrepreneurs are turning to New Venture Institute.
+  .row
+    - @all_market_sectors.each do |market_sector|
+      - cache ["home_blurb", market_sector] do
+        %article.span3
+          %header
+            = link_to market_sectors_path(market_sector) do
+              %h2= market_sector.name
+          %p= market_sector.blurb
+
+  - content_for :pre_footer do
+    = render 'shared/footer_slider'
