@@ -22,10 +22,14 @@ class Cart < ActiveRecord::Base
     LineItem.where(cart_id: self.id).sum(:price_in_pennies)
   end
 
-  def finalize
-    #talk to stripe
-    #set complete to true
-    #email user
-    #redirect back to user profile
+  def finalize!
+    Stripe::Charge.create(
+      :amount => self.total_in_pennies,
+      :currency => "usd",
+      :customer => self.user.stripe_customer_token, # obtained with Stripe.js
+      :description => "Charge for #{self.user.email}, cart id: #{self.id}"
+    )
+    self.completed = true
+    self.save
   end
 end

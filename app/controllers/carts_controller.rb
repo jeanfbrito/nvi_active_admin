@@ -21,12 +21,7 @@ class CartsController < InheritedResources::Base
   def charge
     @user = current_user
     @cart = current_cart
-    Stripe::Charge.create(
-      :amount => @cart.total_in_pennies,
-      :currency => "usd",
-      :customer => @user.stripe_customer_token, # obtained with Stripe.js
-      :description => "Charge for #{@user.email}, cart id: #{@cart.id}"
-    )
+    @cart.finalize!
   end
 
 end
