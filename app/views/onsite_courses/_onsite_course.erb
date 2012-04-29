@@ -10,7 +10,7 @@
     <div class="clear"></div>
     <div id="course_<%= onsite_course.id %>" class="onsite-course-body collapse in">
       <div class="onsite-course-inner">
-        <%= onsite_course.description %>
+        <%= markdown(onsite_course.description) %>
       </div>
       <div class="locations">
         <h3>Locations</h3>

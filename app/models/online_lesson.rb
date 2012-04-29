@@ -1,6 +1,6 @@
 class OnlineLesson < ActiveRecord::Base
   attr_accessible :description, :online_course_id, :price, :title, :video, :position
-  belongs_to :online_course
+  belongs_to :online_course, touch: true
   has_many :line_items, as: :purchasable
   acts_as_list scope: :online_course
   swf_accessor :video

@@ -5,7 +5,7 @@ This is the Rails application that runs the New Venture Institute website.
 
 This README consists of a few different parts.  Here's a table of contents:
 
-* [Setting Up Your Local Environment](#setting-up-your-local-environment)
+* [Setting Up Your Local Environment](#setting-up-your-local-environment-os-x-lion)
 * [A General Overview of How The App Works](#a-general-overview-of-how-the-app-works)
 * [How to Deploy](#how-to-deploy)
 * [Managing the Heroku Deployment](#managing-the-heroku-deployment)
@@ -104,7 +104,7 @@ You will also want to make sure to add the `heroku` remote to the git repository
 
     $ git remote add heroku git@heroku.com:new-venture-institute.git
 
-The Heroku gem will let you control pretty much anything about the deployment.  For more info on what you can do with it, look at [Managing the Heroku Deployment](#managing-heroku).
+The Heroku gem will let you control pretty much anything about the deployment.  For more info on what you can do with it, look at [Managing the Heroku Deployment](#managing-the-heroku-deployment).
 
 * * *
 
@@ -191,7 +191,7 @@ The `LineItem` represents something that can be place in the `Cart`.  It has a p
 
 ###OnsiteCourse
 
-`OnsiteCourse`s belong to a `MarketSector`, and have a many-to-many relationship with `Location`s.  The "join model" of that many-to-many relationship is the [`OnsiteCourseLocation`](#OnsiteCourseLocationModel).  `OnsiteCourse`s have a description, a name, a price, and a down payment price.
+`OnsiteCourse`s belong to a `MarketSector`, and have a many-to-many relationship with `Location`s.  The "join model" of that many-to-many relationship is the [`OnsiteCourseLocation`](#OnsiteCourseLocation).  `OnsiteCourse`s have a description, a name, a price, and a down payment price.
 
 ###OnsiteCourseLocation
 
@@ -199,7 +199,7 @@ The `LineItem` represents something that can be place in the `Cart`.  It has a p
 
 ###OnsiteLesson
 
-`OnsiteLesson`s belong to an `OnsiteCourse` and have a many-to-many relationship with `Location`s.  The "join model" of that many-to-many relationship is the [`OnsiteLessonLocation`](#OnsiteLessonLocationModel).  `OnsiteLesson`s have a description, a name, and a price.
+`OnsiteLesson`s belong to an `OnsiteCourse` and have a many-to-many relationship with `Location`s.  The "join model" of that many-to-many relationship is the [`OnsiteLessonLocation`](#OnsiteLessonLocation).  `OnsiteLesson`s have a description, a name, and a price.
 
 ###OnsiteLessonLocation
 

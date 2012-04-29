@@ -1,21 +1,23 @@
-<div class="online-course">
-  <div class="online-course-heading">
-    <div class="left">
-      <a data-toggle="collapse" href="#course_<%= online_course.id %>"><h2><%= online_course.title %> <small><%= online_course.instructor.name %></small></h2></a>
+<% cache online_course do %>
+  <div class="online-course">
+    <div class="online-course-heading">
+      <div class="left">
+        <a data-toggle="collapse" href="#course_<%= online_course.id %>"><h2><%= online_course.title %> <small><%= online_course.instructor.name %></small></h2></a>
+      </div>
+      <div class="right">
+        <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(online_course.price) %></small></p>
+        <%= add_to_cart(online_course) %>
+      </div>
     </div>
-    <div class="right">
-      <p style="float: left; margin-right: 10px;"><small><%= number_to_currency(online_course.price) %></small></p>
-      <%= add_to_cart(online_course) %>
+    <div class="clear"></div>
+    <div id="course_<%= online_course.id %>" class="online-course-body collapse in">
+      <div class="online-course-inner">
+        <%= markdown(online_course.description) %>
+      </div>
+      <div class="lessons">
+        <h3>Modules</h3>
+        <%= render online_course.lessons %>
+      </div>
     </div>
   </div>
-  <div class="clear"></div>
-  <div id="course_<%= online_course.id %>" class="online-course-body collapse in">
-    <div class="online-course-inner">
-      <%= online_course.description %>
-    </div>
-    <div class="lessons">
-      <h3>Modules</h3>
-      <%= render online_course.lessons %>
-    </div>
-  </div>
-</div>
+<% end %>
