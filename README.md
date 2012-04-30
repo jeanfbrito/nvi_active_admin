@@ -212,6 +212,8 @@ The `User` model stores all of the users information.  We store their email, pas
 Views
 -----
 
+[coming soon]
+
 * Application
 * Carts
 * Instructor
@@ -232,6 +234,8 @@ Views
 
 Controllers
 -----------
+
+[coming soon]
 
 * Application
 * Carts
