@@ -111,14 +111,6 @@ The Heroku gem will let you control pretty much anything about the deployment.  
 A General Overview of How The App Works
 =======================================
 
-First, allow me to appologize for the quality of the code.  This app was cowboy coded because of a few reasons:
-
-* When I was first asked to build this application, it's scope was very small, and it did not appear to be very complicated.  I quoted it very low, because it was originally supposed to be 2 weeks of development.  The scope gradually grew more and more, and the development time extended past 2 months.  I never charged more because there was no original agreement on the scope of the application, which was my fault.  I won't make that mistake again.  Towards the end of the development, so many new things (that I didn't know had to be in this "alpha" version) came up, that I had to scrap the backend that I had originally been building off of, to have something to handle the new functionallity.  The majority of this new, last version was coded in 3 days.
-* I had limited time to work on this app, and the more I worked on it, the further my hourly rate plummeted, so instead of spending the extra time to make the code as high of quality as it should be, I took shortcuts.
-* I really believe that since this is only an "alpha", that it should be either completely rewritten, or at the least, dramatically overhauled, for the final release.  In it's current state, it is going to be too difficult to get new developers to work on it, and add new features.
-
-So with my appology out of the way, let me get to how this thing works.
-
 I'm going to have to skip over a lot of Rails basics so that this guide isn't too huge, but you should know that Rails uses the MVC model.  I'll split up the pieces by Models, Views, and Controllers.
 
 Models
@@ -214,46 +206,12 @@ Views
 
 [coming soon]
 
-* Application
-* Carts
-* Instructor
-* Jobs
-* Line Items
-* Locations
-* Market Sectors
-* News
-* Online Courses
-* Online Lessons
-* Onsite Courses
-* Onsite Course Locations
-* Onsite Lessons
-* Onsite Lesson Locations
-* Pages
-* User Sessons
-* Users
 
 Controllers
 -----------
 
 [coming soon]
 
-* Application
-* Carts
-* Instructor
-* Jobs
-* Line Items
-* Locations
-* Market Sectors
-* News
-* Online Courses
-* Online Lessons
-* Onsite Courses
-* Onsite Course Locations
-* Onsite Lessons
-* Onsite Lesson Locations
-* Pages
-* User Sessons
-* Users
 
 * * *
 
