@@ -2,7 +2,7 @@
   <div class="location <%= cycle 'odd', 'even', name: "onsite_course" %>">
     <div class="location-header">
       <div class="left">
-        <a data-toggle="collapse" href="#location_<%= location.id %>"><p><%= location.name %><% if location.country %>, <small><%= location.country %></small><% end %><% if onsite_course.at(location).start_date && onsite_course.at(location).end_date %></p><p><small><%= onsite_course.at(location).start_date.strftime("%m/%d") %> - <%= onsite_course.at(location).end_date.strftime("%m/%d") %></small><% end %></p></a>
+        <a data-toggle="collapse" href="#location_<%= location.id %>"><p><%= location.name %><% if location.country %>, <small><%= location.country %></small><% end %><% if onsite_course.at(location).try(:start_date) && onsite_course.at(location).try(:end_date) %></p><p><small><%= onsite_course.at(location).start_date.strftime("%m/%d") %> - <%= onsite_course.at(location).end_date.strftime("%m/%d") %></small><% end %></p></a>
       </div>
       <div class="right">
         <div class="add_course_to_cart">
