@@ -52,6 +52,7 @@ div.online-course-heading h2, div.onsite-course-heading h2 {
 div.right div {
   width: 150px;
   margin-top: 5px;
+  height: 25px;
 }
 
 div.right p small {
@@ -62,13 +63,13 @@ div.right p small {
 
 div.right {
   height: 30px !important;
-  width: 135px;
-  margin-left: 120px;
+  width: 150px;
+  margin-left: 100px;
 }
 
 form.button_to {
   width: 130px;
-  margin-top: 6px;
+  margin: 6px;
 }
 
 input.btn.btn-primary.btn-mini {
@@ -91,10 +92,6 @@ div.left p.seats_remaining {
 div.left a p {
   width: 410px;
   height: 0px;
-}
-
-input.btn.btn-success.btn-mini {
-  margin-right: 8px;
 }
 
 div.onsite-lesson {
@@ -125,27 +122,18 @@ header {
   margin-bottom: 10px;
 }
 
-form.button_to div {
-  height: 0;
-  width: 0;
-}
-
 div.reserve_course p small {
-  position: relative;
-  top: 18px;
-  right: 70px;
+  line-height: 18px;
 }
 
 div.add_course_to_cart p small {
-  position: relative;
-  bottom: 5px;
-  right: 12px;
-  text-align: right;
+  line-height: 18px;
 }
 
-input.btn.btn-success.btn-mini {
-  margin-top: 38px;
-  margin-left: 53px;
+.right div p {
+  height: 15px;
+  float: left;
+  margin-right: 10px;
 }
 
 div.column {
